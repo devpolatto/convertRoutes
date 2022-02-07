@@ -1,0 +1,48 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body{
+    font-family: 'Roboto', 'Poppins', sans-serif;
+    width: 100vw;
+    height: 100vh;
+}
+
+#app{
+    width: 100%;
+    height: 100%;
+
+    display: flex;
+
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+#app .interface{
+    margin: 28px 0;
+}
+
+#app .interface input{
+    padding: 8px 0 8px 8px;
+}
+
+#app .conversor {
+    display: flex;
+    flex-direction: row;
+    gap: 16px;
+}
+
+#app .conversor .input-route{
+    padding: 8px 0 0 8px;
+    width: 500px;
+    height: 400px;
+}
+
+#app button {
+    margin-top: 16px;
+
+    height: 42px;
+    width: 100px;
+}
