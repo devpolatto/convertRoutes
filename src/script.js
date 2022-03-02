@@ -48,24 +48,23 @@ function removingRoutesTrash(route){
     })
 }
 
-const convertToFortigate = routesWhitoutTrash.map(route => {
-    console.log(`Rota ok: ${route}`)
-})
+let convertToFortigate = ''
 
 const init = () => {
     removingRoutesTrash(routesBackupRouter)
 
-    const convertToFortigate = routesWhitoutTrash.map(route => {
+    routesWhitoutTrash.forEach(route => {
 
         console.log(`
             edit 0
             set dst ${route.substring(route.indexOf(interface), -1)}
             set device VPN_IPSEC
-            set comment "REDE_DE_ACESSO_VPN_1"
+            set comment "Rede_Remota"
             next
         `)
     })    
-    console.log(routesWhitoutTrash)
+    // console.log(convertToFortigate
+    // console.log(routesWhitoutTrash)
 }
 
 init()
