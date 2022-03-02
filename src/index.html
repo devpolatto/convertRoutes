@@ -1,5 +1,6 @@
 <!-- 
 	[X] - Obter as rotas e converte-las em um array. Cada rota deve ser um index do array 
+	[] - Remover rotas desnecessárias
 
 
 -->
@@ -34,21 +35,6 @@
 		<button id="buttonRoutesConvert" onclick="convert()">Converter</button>
 	</div>
 
-	<script>
-			var routesBackupElement = []
-			var buttonElement = document.getElementById('buttonRoutesConvert')
-
-			function convert(){
-				routesBackupElement.push(document.getElementById("routesBackup").value)
-				routesBackupElement = document.getElementById("routesBackup").value
-
-				const routesPhase1 = routesBackupElement.split('\n')
-				// const routesPhase2 = routesPhase1.split('ip')	
-
-				console.log(routesPhase1)
-			}
-
-
-	</script>
+	<script src="script.js"></script>
 </body>
 </html>
