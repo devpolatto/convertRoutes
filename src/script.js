@@ -1,5 +1,7 @@
 const interface = 'Tunnel0'
 
+let convertedRoutesTemplateTextarea = document.querySelector('#convertedRoutesTemplate')
+
 let routesWhitoutTrash = []
 
 const specificsRouttes = [
@@ -55,16 +57,12 @@ const init = () => {
 
     routesWhitoutTrash.forEach(route => {
 
-        console.log(`
-            edit 0
-            set dst ${route.substring(route.indexOf(interface), -1)}
-            set device VPN_IPSEC
-            set comment "Rede_Remota"
-            next
-        `)
+        if(convertedRoutesTemplateTextarea.textContent == 0){
+            convertedRoutesTemplateTextarea.textContent += `config router static\nedit 0\nset dst ${route.substring(route.indexOf(interface), -1)}\nset device VPN_IPSEC\nset comment "Rede_Remota"\nnext\n`
+        } else{
+            convertedRoutesTemplateTextarea.textContent += `edit 0\nset dst ${route.substring(route.indexOf(interface), -1)}\nset device VPN_IPSEC\nset comment "Rede_Remota"\nnext\n`
+        }
     })    
-    // console.log(convertToFortigate
-    // console.log(routesWhitoutTrash)
 }
 
 init()
